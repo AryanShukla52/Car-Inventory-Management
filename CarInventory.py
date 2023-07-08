@@ -177,7 +177,7 @@ class CarInventory:
 
 
 
-    # Lab 09 Starts Here
+    # Implementation of the second part of the project begins here
     '''
     hasRightChild = getRight
     hasLeftChild = getLeft
