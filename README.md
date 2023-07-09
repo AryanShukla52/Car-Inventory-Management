@@ -8,9 +8,9 @@ Skills practiced in this project:
 * Writing functions that ensure Car objects are in sorted order
 * Testing functionality with pytest
 
-# Part 1 of this Project
+## Part 1 of this Project
 
-# Introduction
+### Introduction
 
 The purpose of this project was to create a program that will manage cars for a used car dealership. All cars have a make, model, year, and price, which can be used to determine the value of cars in relation to each other. All cars will be managed by a Binary Search Tree (BST) where the nodes are sorted by make, then model in lexicographical order. Within each make/model node, the `Car` objects will be added to a Python List based on insertion order.
 
@@ -18,7 +18,7 @@ In order to manage the cars, I defined `Car`, `CarInventoryNode` and `CarInvento
 
 I also wrote pytests in `testFile.py` to illustrate that the behavior of the program is working as I anticipated.
 
-# Components
+### Components
 
 This project comprises of four different files:
 * `Car.py` - Defines a Car class. This class will assume all Cars have a `make`(str), `model`(str), `year`(int), and a `price`(int).
@@ -26,7 +26,7 @@ This project comprises of four different files:
 * `CarInventory.py` - Defines a CarInventory (BST) class that is an ordered collection of a Dealership's Cars.
 * `testFile.py` - This file contains pytest functions that test the overall correctness of the class definitions.
 
-# Car.py
+### Car.py
 
 The `Car.py` file contains the definition of a `Car` class. The `Car` class holds information about the cars (`make`, `model`, `year`, and `price`). The `Car` attributes are defined as follows:
 
@@ -56,7 +56,7 @@ print(c)
 Make: HONDA, Model: CRV, Year: 2007, Price: $8000
 ```
 
-# CarInventoryNode.py
+### CarInventoryNode.py
 
 The `CarInventoryNode.py` file contains the definition of a `CarInventoryNode` class, which is the node for a BST.
 
@@ -100,7 +100,7 @@ Make: DODGE, Model: DART, Year: 2003, Price: $5000
 
 ```
 
-# CarInventory.py
+### CarInventory.py
 
 The `CarInventory.py` file contains the definition of a `CarInventory` class. It manages the `CarInventoryNode`s and keeps track of all the cars a dealership has. The `CarInventory` is implemented as a BST. The `CarInventory` creates and manages `CarInventoryNode` objects based on a car's `make` and `model` attributes. When storing `Car` objects in the `CarInventory`, `Car` objects with the same `make` and `model` will be appended to a Python List based on insertion order within the `CarInventoryNode` object.
 
@@ -186,25 +186,24 @@ Make: NISSAN, Model: LEAF, Year: 2018, Price: $18000
 """
 ```
 
-# testFile.py
+### testFile.py
 
 This file tests all of the classes and required methods using pytest. 
 
-# Part 2 of the Project
+## Part 2 of the Project
 
 In this part of the project I tookthe  existing Used Car Lot program I wrote that manages cars for a second-hand car dealership, and I added support for removing Cars from the lot.
 
 In order to remove the cars for this lab, I defined a `removeCar` method in the `CarInventory` class that removes Cars with the same `make`/`model`/`year`/`price` from a `CarInventoryNode`'s cars list. After removing a Car and no cars exist in the `CarInventoryNode`'s cars list, the node is removed from the BST while preserving the BST property.
 
-# Updates made to CarInventory.py
-
+### Updates made to CarInventory.py
 
 In addition to the methods created before, the following methods were added:
 
 * `getSuccessor(self, make, model)` - finds the `CarInventoryNode` with the `make` and `model`, and returns the CarInventoryNode with the next greatest value (using the same heirarchy of `make`, then `model`). Returns `None` if there is no `CarInventoryNode` with the specified `make` and `model`, or if the `CarInventoryNode` is the maximum and has no successor. **Note, this includes the successor of any `CarInventoryNode` in the BST if it exists, not just the successor used for BST maintenance.**
 * `removeCar(self, make, model, year, price)` - attempts to find the `Car` with the specified `make`, `model`, `year`, and `price`, and removes it from the `CarInventoryNode`'s cars list. If the list is empty after removing the `Car`, then it removes the `CarInventoryNode` from the BST entirely. Returns `True` if the `Car` was successfully removed, and `False` if the `Car` is not present in the `CarInventory`. If there are duplicate cars within a `CarInventoryNode`'s car list that matches the specifications, it just removes the first matching `Car` object in the cars list.
 
-# Examples
+### Examples
 
 Given an example BST:
 
@@ -230,7 +229,7 @@ bst.addCar(car5)
 #  Audi,A3,[Car(Audi,A3,2021,25000)]
 ```
 
-### InOrder Traversal
+#### InOrder Traversal
 
 Using the `CarInventory` after the `addCar` methods above, an example of the `inOrder()` string format for removal is given below after removing the following Car:
 
@@ -271,7 +270,7 @@ Make: TESLA, Model: MODEL3, Year: 2018, Price: $50000
 """
 ```
 
-### PreOrder Traversal
+#### PreOrder Traversal
 
 Using the `CarInventory` after the `addCar` methods above, an example of the `preOrder()` string format is given below after removing the following Cars:
 
@@ -308,7 +307,7 @@ Make: TESLA, Model: MODEL3, Year: 2018, Price: $50000
 """
 ```
 
-### PostOrder Traversal
+#### PostOrder Traversal
 
 Using the `CarInventory` after the `addCar` methods above, an example of the `postOrder()` string format is given below after removing the following Cars:
 
