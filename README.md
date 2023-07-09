@@ -1,4 +1,4 @@
-# CarInventoryManagement
+# Car-Inventory-Management
 
 Skills practiced in this project:
 
